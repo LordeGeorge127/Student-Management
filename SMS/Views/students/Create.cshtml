@@ -1,0 +1,17 @@
+﻿
+@model Student;
+
+
+<form method="post" asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Firstname">FirstName</label>
+        <input asp-for="Firstname" class="form-control" placeholder="FirstName">
+        <span asp-validation-for="Firstname" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Lastname">LastName</label>
+        <input asp-for="Lastname" class="form-control" placeholder="LastName">
+        <span asp-validation-for="Lastname" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
