@@ -1,0 +1,78 @@
+﻿@using SMS.Data.Enum;
+@using SMS.ViewModels;
+
+@model CreateParentViewModel;
+
+
+
+<div class="row flex-md-row card card-md">
+    <div class="card-body bg-secondary">
+        <div class="text-center mb-5">
+            <h1 class="h2 mb-2">Fill Parents Details</h1>
+            
+        </div>
+        <div class="row justify-content-center">
+            
+
+
+            <form method="post" asp-action="Create" enctype="multipart/form-data">
+                        @*<input type="hidden" id="AppUserId" name="AppUserId" asp-for="AppUserId" />*@
+                        <div class="form-group">
+                            <label asp-for="FathersName">Father's Name'</label>
+                            <input asp-for="FathersName" class="form-control form-control-lg" placeholder="Father's Name'" />
+                            <span asp-validation-for="FathersName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="MothersName">Mother's Name'</label>
+                            <input asp-for="MothersName" class="form-control form-control-lg" placeholder="Mother's Name'" />
+                            <span asp-validation-for="MothersName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <div class="col">
+                                <label asp-for="FathersPhone">Fathers Phone Number</label>
+                        <input asp-for="FathersPhone" class="form-control form-control-lg" placeholder="Father's Phone number" />
+                        <span asp-validation-for="FathersPhone" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col">
+                                <label asp-for="MothersPhone">Mothers Phone Number</label>
+                        <input asp-for="MothersPhone" class="form-control form-control-lg" placeholder="Mother's Phone number" />
+                        <span asp-validation-for="MothersPhone" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col">
+                                <label asp-for="Email">Email</label>
+                                <input asp-for="Email" class="form-control form-control-lg" placeholder="Email" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <label asp-for="Address.Id">City</label>
+                                <input asp-for="Address.City" class="form-control form-control-lg" placeholder="City" />
+                                <span asp-validation-for="Address.City" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label asp-for="Address.Id" class="control-label">County</label>
+                                <input asp-for="Address.County" class="form-control form-control-lg" placeholder="County" />
+                                <span asp-validation-for="Address.Id" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label asp-for="Address.Country">Country</label>
+                                <input asp-for="Address.Country" class="form-control form-control-lg" placeholder="Country" />
+                                <span asp-validation-for="Address.Id" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <button class="btn btn-block btn-success btn-lg" type="submit">Submit</button>
+                            </div>
+                        </div>
+              </form>
+</div>
+</div>
+ </div>

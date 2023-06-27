@@ -1,0 +1,71 @@
+﻿@using SMS.Data.Enum;
+@using SMS.ViewModels;
+
+@model EditStudentViewModel
+
+
+<form method="post" asp-action="EditStudentDetails" enctype="multipart/form-data">
+    <input type="hidden" value="AddressId" id="AddressId" />
+    @*<input type="hidden" id="AppUserId" name="AppUserId" asp-for="AppUserId" />*@
+    <div class="form-group">
+        <label asp-for="Firstname">FirstName</label>
+        <input asp-for="Firstname" class="form-control form-control-lg" placeholder="Firstname" />
+        <span asp-validation-for="Firstname" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Lastname">LastName</label>
+        <input asp-for="Lastname" class="form-control form-control-lg" placeholder="Lastname" />
+        <span asp-validation-for="Lastname" class="text-danger"></span>
+    </div>
+    <div class=" form-group">
+        <label asp-for="DateOfBirth">Date of Birth</label>
+        <input asp-for="DateOfBirth" class="form-control form-control-lg" placeholder="Date of Birth" />
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+        <div class="col">
+            <label asp-for="Phone">PhoneNumber</label>
+            <input asp-for="Phone" class="form-control form-control-lg" placeholder="Phone number" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col">
+            <label asp-for="Email">Email</label>
+            <input asp-for="Email" class="form-control form-control-lg" placeholder="Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Gender">Gender</label>
+        <select asp-for="Gender" asp-items="@Html.GetEnumSelectList<Gender>()" class="form-control">
+            <option>--Select--</option>
+        </select>
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+    <div class="form-row form-group">
+        <div class="col">
+            <label asp-for="Address.City">City</label>
+            <input asp-for="Address.City" class="form-control form-control-lg" placeholder="City" />
+            <span asp-validation-for="Address.City" class="text-danger"></span>
+        </div>
+        <div class="col">
+            <label asp-for="Address.County">County</label>
+            <input asp-for="Address.County" class="form-control form-control-lg" placeholder="County" />
+            <span asp-validation-for="Address.County" class="text-danger"></span>
+        </div>
+        <div class="col">
+            <label asp-for="Address.Country">Country</label>
+            <input asp-for="Address.Country" class="form-control form-control-lg" placeholder="Country" />
+            <span asp-validation-for="Address.Country" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-row form-group">
+        <div class="col">
+            <button class="btn btn-block btn-success btn-lg" type="submit">Submit</button>
+        </div>
+    </div>
+</form>
+

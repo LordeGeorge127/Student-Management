@@ -1,0 +1,159 @@
+﻿@model parents
+
+<div class="row panel panel-success" style="margin-top:2%;">
+    <div class="panel-heading lead">
+        <div class="row">
+            <div class="col-lg-8 col-md-8"><i class="fa fa-users"></i> View Student Details</div>
+        </div>
+    </div>
+    <div class="card>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="ro">
+                    
+                    <div class="col-lg-12 col-md-12">
+                        <ul class="nav nav-tabs flex-row" ">
+                            <li class="active" style="padding:0 10px 0 10px"><a data-toggle="tab" href="#Summery" class="text-success"><i class="fa fa-indent"></i> Summary</a></li>
+                            <li style="padding:0 10px 0 10px"><a data-toggle="tab" href="#Contact" class="text-success"><i class="fa fa-bookmark-o"></i> Contact Info</a></li>
+                            <li style="padding:0 10px 0 10px"><a data-toggle="tab" href="#Address" class="text-success"><i class="fa fa-home"></i> Address</a></li>
+                            <li style="padding:0 10px 0 10px"><a data-toggle="tab" href="#General" class="text-success"><i class="fa fa-info"></i> General Info</a></li>
+                        </ul>
+                        <div class="tab-content" style="width:800px!important">
+                            <div id="Summery" class="tab-pane fade in active">
+                                <div class="table-responsive panel">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-success"><i class="fa fa-user"></i>Guardian Name</td>
+                                                <td>@Model.FathersName </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-success"><i class="fa fa-user"></i>Guardian Name</td>
+                                                <td>@Model.MothersName </td>
+                                            <tr>
+                                                <td class="text-success"><i class="fa fa-list-ol"></i> Student Name</td>
+                                                <td>students name</td>
+                                            </tr>
+                                           
+                                            <tr>
+                                               <td class="text-success"><i class="fa fa-group"></i> Class</td>
+                                                <td>fIRST Year</td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td class="text-success"><i class="fa fa-university"></i> School</td>
+                                                <td> Shyama Mall  Inter College </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div id="Address" class="tab-pane fade">
+                                <div class="table-responsive panel">
+                                    <table class="table">           
+                                        <tbody>
+                                            <tr>
+                                                <th class="text-success"><i class="fa fa-home"></i> Address</td>
+                                                
+                                            </th>
+                                            <tr>
+                                                <td class="text-success"><i class="fa fa-user"></i>City Name</td>
+                                                <td> @Model.Address.City</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-success"><i class="fa fa-list-ol"></i> County Name</td>
+                                                <td>@Model.Address.County</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-success"><i class="fa fa-book"></i> Country</td>
+                                                <td>@Model.Address.Country</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div id="Contact" class="tab-pane fade">
+                                <div class="table-responsive panel">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-success"><i class="fa fa-envelope-o"></i> Email</td>
+                                                <td><a href=""</a>@Model.Email</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-success"><i class="glyphicon glyphicon-phone"></i> Mobile Number</td>
+                                                <td>@Model.FathersPhone/ @Model.MothersPhone</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-success"><i class="fa fa-flag"></i> Nationality</td>
+                                                <td>@Model.Address.Country</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-success"><i class="fa fa-user"></i> Father's Name</td>
+                                                <td>@Model.FathersName</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-success"><i class="glyphicon glyphicon-phone"></i> Father's Mobile</td>
+                                                <td>@Model.FathersPhone</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-success"><i class="fa fa-user"></i> Mother's Name</td>
+                                                <td>@Model.MothersName</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-success"><i class="glyphicon glyphicon-phone"></i> Mother's Mobile</td>
+                                                <td>@Model.MothersPhone</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-success"><i class="fa fa-user"></i> Emergency Contact Person</td>
+                                                <td>@Model.FathersName/@Model.MothersName</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-success"><i class="glyphicon glyphicon-phone"></i> Emergency Contact Person's Mobile</td>
+                                                <td>@Model.FathersPhone</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div id="General" class="tab-pane fade">
+                                <div class="table-responsive panel">
+                                    <table class="table">
+                                        <tbody>
+                                            
+                                            <tr>
+                                                <td class="text-success"><i class="fa fa-calendar"></i> Date of Admission</td>
+                                                <td>March 4, 2009</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-success"><i class="fa fa-home"></i> Birth Place</td>
+                                                <td>Nakuru</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-success"><i class="fa fa-calendar"></i> Academic Year</td>
+                                                <td>2015-2016</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-success"><i class="fa fa-medkit"></i> Medical Condition</td>
+                                                <td>Normal</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-success"><i class="fa fa-thumbs-up"></i> Active/Inactive</td>
+                                                <td>Student is Active</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-success"><i class="glyphicon glyphicon-time"></i> Last Editing</td>
+                                                <td>2015-08-20 09:41:56</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.table-responsive -->
+    </div>
+</div>

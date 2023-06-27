@@ -8,7 +8,10 @@ namespace SMS.Data
         public DataContext(DbContextOptions<DataContext> options): base(options) { }
         public DbSet<Student> students { get; set; }
         public DbSet<parents> parents { get; set; }
-        public DbSet<User> users { get; set; }
+  
+        public DbSet<Address> Addresses { get; set; }
+
+        public DbSet<StudentParent> studentParents { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -17,11 +20,14 @@ namespace SMS.Data
             modelBuilder.Entity<StudentParent>()
                 .HasOne(p => p.student)
                 .WithMany(pc => pc.studentParents)
-                .HasForeignKey(c => c.StudentId);
+                .HasForeignKey(c => c.StudentId)
+                .OnDelete(DeleteBehavior.ClientSetNull);
             modelBuilder.Entity<StudentParent>()
                 .HasOne(p => p.parents)
                 .WithMany(pc => pc.studentParents)
-                .HasForeignKey(c => c.ParentId);
+                .HasForeignKey(c => c.ParentId)
+                .OnDelete(DeleteBehavior.ClientSetNull);
+
 
         }
 

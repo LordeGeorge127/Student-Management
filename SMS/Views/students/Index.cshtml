@@ -1,6 +1,90 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<h1>hello</h1>
+﻿@model IEnumerable<Student>
+
+
+
+<h1 class="display-4 fw-normal">Student Dashboard</h1>
+<a type="button" class="btn btn-primary" asp-area="" asp-controller="Students" asp-action="Create">Create Student</a>
+
+@*<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" src="" width="100%" height="225" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">@item.Firstname</p>
+                            <p class="card-text">@item.Email</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a type="btn btn-sucess" asp-controller="Club" asp-action="Detail" asp-route-id="@item.Id"
+                                       class="btn btn-sm btn-outline-secondary">View</a>
+                                    @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
+                                    {
+                                        <a asp-controller="Club" asp-action="Edit" asp-route-id="@item.Id"
+                                           class="btn btn-sm btn-outline-secondary">Edit</a>
+                                        <a asp-controller="Club" asp-action="Delete" asp-route-id="@item.Id"
+                                           class="btn btn-sm btn-outline-secondary">Delete</a>
+                                    }
+
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>*@
+
+
+
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Students List</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">        
+         <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>City</th>
+                    <th>County</th>
+                    <th>Country</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Firstname @item.Lastname </td>
+                            <td>@item.Email</td>
+                            <td>@item.Gender</td>
+                            <td>@item.Address.City</td>
+                            <td>@item.Address.County</td>
+                            <td>@item.Address.Country</td>
+                            <td>
+                            <a type="button" class="btn btn-primary" asp-area="" asp-controller="Students" asp-route-id="@item.Id" asp-action="EditStudentDetails"><i class="fa fa-pencil"></i> Edit</a>
+                            </td>
+                            <td>
+                                    <a type="button" class="btn btn-primary" asp-area="" asp-controller="Students" asp-route-id="@item.Id" asp-action="Detail"><i class="fa fa-eye"></i> View</a>
+                            </td>
+                                <td>
+                                    <a type="button" class="btn btn-primary" asp-area="" asp-controller="Students" asp-route-id="@item.Id" asp-action="Delete"><i class="fa fa-trash"></i> Delete</a>
+                                </td>
+                        </tr>
+                    }
+            </tbody>
+        </table>
+    </div>
+        
+      
+</div>

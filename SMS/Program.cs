@@ -1,5 +1,7 @@
 using SMS.Data;
 using Microsoft.EntityFrameworkCore;
+using SMS.Interface;
+using SMS.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,8 @@ builder.Services.AddDbContext<DataContext>(o =>
 {
     o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+builder.Services.AddScoped<IParentRepository, ParentRepository>();
 
 
 var app = builder.Build();
